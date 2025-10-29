@@ -12,6 +12,8 @@ Technology used :
   * C# - Backend Logic
   * HTML & CSS - UI
 
+Result :
+
 
 [ Home Page ] (https://github.com/Divyadev25/BillingApp/blob/main/Home.PNG)
 
