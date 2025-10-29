@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<RestaurantBillingApp.Models.MenuItem>
+<h2>Restaurant Menu's </h2>
+
+<form asp-action="GenerateBill" method="post">
+    <table class="table table-bordered">
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+
+        @for(int i=0; i<Model.Count; i++)
+        {
+            <tr>
+                <td>@Model[i].Name</td>
+                <td>@Model[i].Price</td>
+                <td>
+                    <input type="number" asp-for="@Model[i].Quantity" min="0" class="form-control"/>
+                    <input type="hidden" asp-for="@Model[i].Name"/>
+                    <input type="hidden" asp-for="@Model[i].Price"/>
+                </td>
+            </tr>
+        }
+    </table>
+
+    <button type="submit" class="btn btn-success">GenerateBill</button>
+</form>
